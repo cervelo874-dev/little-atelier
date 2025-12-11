@@ -56,6 +56,9 @@ export default function Home() {
           </Suspense>
         </section>
       </main>
+      <footer className="py-6 text-center text-xs text-muted-foreground">
+        &copy; 2024 Little Atelier - v1.1
+      </footer>
     </div>
   );
 }

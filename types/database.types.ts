@@ -38,6 +38,7 @@ export interface Database {
                     created_at: string
                     shot_at_date: string | null
                     age_at_creation: string | null
+                    child_id: string | null
                     memo: string | null
                     tags: string[] | null
                 }
@@ -130,6 +131,7 @@ export interface Database {
                     created_at: string
                     shot_at_date: string | null
                     age_at_creation: string | null
+                    child_id: string | null
                     memo: string | null
                     tags: string[] | null
                 }[]

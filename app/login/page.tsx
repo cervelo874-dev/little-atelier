@@ -15,8 +15,12 @@ export default function LoginPage() {
         const params = new URLSearchParams(window.location.search)
         const error = params.get('error')
         const errorDescription = params.get('error_description')
+        const redirectedFrom = params.get('redirected_from')
+
         if (error && errorDescription) {
             setMessage({ type: 'error', text: `${error}: ${errorDescription}` })
+        } else if (redirectedFrom) {
+            console.log('Redirected from:', redirectedFrom) // Info for debugging
         }
     }, [])
 

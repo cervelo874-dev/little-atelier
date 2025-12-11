@@ -86,4 +86,22 @@ export interface Database {
             }
         }
     }
+    Functions: {
+        get_shared_artworks: {
+            Args: {
+                share_token: string
+            }
+            Returns: {
+                id: string
+                user_id: string
+                storage_path: string
+                created_at: string
+                shot_at_date: string | null
+                age_at_creation: string | null
+                memo: string | null
+                tags: string[] | null
+            }[]
+        }
+    }
+}
 }

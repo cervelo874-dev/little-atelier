@@ -28,6 +28,7 @@ export interface Database {
                     children_info?: Json | null
                     created_at?: string
                 }
+                Relationships: []
             }
             artworks: {
                 Row: {
@@ -60,6 +61,7 @@ export interface Database {
                     memo?: string | null
                     tags?: string[] | null
                 }
+                Relationships: []
             }
             share_links: {
                 Row: {
@@ -83,7 +85,38 @@ export interface Database {
                     is_active?: boolean
                     created_at?: string
                 }
+                Relationships: []
             }
+            children: {
+                Row: {
+                    id: string
+                    user_id: string
+                    name: string
+                    birth_date: string | null
+                    color: string
+                    created_at: string
+                }
+                Insert: {
+                    id?: string
+                    user_id: string
+                    name: string
+                    birth_date?: string | null
+                    color?: string
+                    created_at?: string
+                }
+                Update: {
+                    id?: string
+                    user_id?: string
+                    name?: string
+                    birth_date?: string | null
+                    color?: string
+                    created_at?: string
+                }
+                Relationships: []
+            }
+        }
+        Views: {
+            [_ in never]: never
         }
         Functions: {
             get_shared_artworks: {
@@ -101,6 +134,12 @@ export interface Database {
                     tags: string[] | null
                 }[]
             }
+        }
+        Enums: {
+            [_ in never]: never
+        }
+        CompositeTypes: {
+            [_ in never]: never
         }
     }
 }

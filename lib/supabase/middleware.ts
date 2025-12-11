@@ -16,25 +16,44 @@ export async function updateSession(request: NextRequest) {
                 },
                 setAll(cookiesToSet) {
                     cookiesToSet.forEach(({ name, value, options }) => {
-                        // supabase.auth.getUser(). A simple mistake could make it very hard to debug
-                        // issues with users being randomly logged out.
+                        request.cookies.set(name, value)
+                    })
+                    supabaseResponse = NextResponse.next({
+                        request,
+                    })
+                    cookiesToSet.forEach(({ name, value, options }) =>
+                        supabaseResponse.cookies.set(name, value, {
+                            ...options,
+                            sameSite: 'lax',
+                            secure: process.env.NODE_ENV === 'production',
+                            path: '/',
+                        })
+                    )
+                },
+            },
+        }
+    )
 
-                        const {
-                            data: { user },
-                        } = await supabase.auth.getUser()
+    // IMPORTANT: Avoid writing any logic between createServerClient and
+    // supabase.auth.getUser(). A simple mistake could make it very hard to debug
+    // issues with users being randomly logged out.
 
-                        if (
-                            !user &&
-                            !request.nextUrl.pathname.startsWith('/login') &&
-                            !request.nextUrl.pathname.startsWith('/auth') &&
-                            !request.nextUrl.pathname.startsWith('/share') &&
-                            request.nextUrl.pathname !== '/'
-                        ) {
-                            // no user, potentially respond by redirecting the user to the login page
-                            const url = request.nextUrl.clone()
-                            url.pathname = '/login'
-                            return NextResponse.redirect(url)
-                        }
+    const {
+        data: { user },
+    } = await supabase.auth.getUser()
 
-                        return supabaseResponse
-                    }
+    if (
+        !user &&
+        !request.nextUrl.pathname.startsWith('/login') &&
+        !request.nextUrl.pathname.startsWith('/auth') &&
+        !request.nextUrl.pathname.startsWith('/share') &&
+        request.nextUrl.pathname !== '/'
+    ) {
+        // no user, potentially respond by redirecting the user to the login page
+        const url = request.nextUrl.clone()
+        url.pathname = '/login'
+        return NextResponse.redirect(url)
+    }
+
+    return supabaseResponse
+}

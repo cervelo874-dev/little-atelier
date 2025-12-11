@@ -1,4 +1,3 @@
-```javascript
 "use client"
 
 import { createClient } from '@/lib/supabase/client'
@@ -23,7 +22,7 @@ export default function LoginPage() {
         const errorDescription = params.get('error_description')
 
         if (error && errorDescription) {
-            setMessage({ type: 'error', text: `${ error }: ${ errorDescription } ` })
+            setMessage({ type: 'error', text: `${error}: ${errorDescription}` })
         }
     }, [])
 
@@ -49,7 +48,7 @@ export default function LoginPage() {
                 setMessage({ type: 'success', text: "確認コードをメールで送信しました。入力してください。" })
             }
         } catch (error) {
-             setMessage({ type: 'error', text: "予期せぬエラーが発生しました。" })
+            setMessage({ type: 'error', text: "予期せぬエラーが発生しました。" })
         } finally {
             setIsLoading(false)
         }
@@ -141,10 +140,10 @@ export default function LoginPage() {
                                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                                 ログインする
                             </Button>
-                            <Button 
-                                type="button" 
-                                variant="ghost" 
-                                className="w-full" 
+                            <Button
+                                type="button"
+                                variant="ghost"
+                                className="w-full"
                                 onClick={() => setIsOtpSent(false)}
                                 disabled={isLoading}
                             >
@@ -154,7 +153,7 @@ export default function LoginPage() {
                     )}
 
                     {message && (
-                        <div className={`p - 4 rounded - md text - sm ${ message.type === 'error' ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-600' } `}>
+                        <div className={`p-4 rounded-md text-sm ${message.type === 'error' ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-600'}`}>
                             {message.text}
                         </div>
                     )}
@@ -163,4 +162,4 @@ export default function LoginPage() {
         </div>
     )
 }
-```
+

@@ -22,7 +22,8 @@ export default function LoginPage() {
         const { error } = await supabase.auth.signInWithOtp({
             email,
             options: {
-                emailRedirectTo: `${location.origin}/auth/callback`,
+                // Use relative path - Supabase will append this to the configured Site URL
+                emailRedirectTo: `${window.location.origin}/auth/callback`,
             },
         })
 

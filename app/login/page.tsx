@@ -94,7 +94,7 @@ export default function LoginPage() {
                     </h2>
                     <p className="mt-2 text-sm text-muted-foreground">
                         ポケットの中の美術館へようこそ。<br />
-                        {!isOtpSent ? "メールアドレスでログインして始めましょう。" : "届いた6桁のコードを入力してください。"}
+                        {!isOtpSent ? "メールアドレスでログインして始めましょう。" : "届いた確認コードを入力してください。"}
                     </p>
                 </div>
 
@@ -129,7 +129,7 @@ export default function LoginPage() {
                                     onChange={(e) => setOtp(e.target.value)}
                                     placeholder="000000"
                                     className="pl-10 text-center tracking-widest text-lg"
-                                    maxLength={6}
+                                    maxLength={8}
                                     inputMode="numeric"
                                     pattern="[0-9]*"
                                     required

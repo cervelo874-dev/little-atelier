@@ -1,7 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet" // We need to check if these exist, otherwise use manual state
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"

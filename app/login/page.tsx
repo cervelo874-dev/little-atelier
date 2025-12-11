@@ -10,6 +10,16 @@ export default function LoginPage() {
     const [isLoading, setIsLoading] = useState(false)
     const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null)
 
+    // Check for error parameters in URL
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search)
+        const error = params.get('error')
+        const errorDescription = params.get('error_description')
+        if (error && errorDescription) {
+            setMessage({ type: 'error', text: `${error}: ${errorDescription}` })
+        }
+    }, [])
+
     const handleEmailLogin = async (e: React.FormEvent) => {
         e.preventDefault()
         if (!email) return

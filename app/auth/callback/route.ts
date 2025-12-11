@@ -26,9 +26,11 @@ export async function GET(request: Request) {
             }
         } else {
             console.error('Auth Check Error:', error)
+            return NextResponse.redirect(`${origin}/login?error=${encodeURIComponent(error.name || 'AuthError')}&error_description=${encodeURIComponent(error.message)}`)
         }
     }
+}
 
-    // return the user to an error page with instructions
-    return NextResponse.redirect(`${origin}/login?error=auth-code-error`)
+// return the user to an error page with instructions
+return NextResponse.redirect(`${origin}/login?error=NoCode&error_description=${encodeURIComponent('No authorization code provided')}`)
 }

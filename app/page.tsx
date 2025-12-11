@@ -6,6 +6,8 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { GalleryGrid } from "@/components/gallery/gallery-grid";
 
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans">

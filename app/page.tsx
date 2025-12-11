@@ -23,7 +23,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-4xl md:text-7xl font-black tracking-widest text-foreground max-w-5xl leading-tight">
-            <span className="inline-block">あふれる思い出を、</span><br className="md:hidden" />
+            <span className="inline-block whitespace-nowrap">あふれる思い出を、</span><br className="md:hidden" />
             <span className="text-primary relative inline-block mx-2">
               <span className="relative z-10">ずっとキレイに。</span>
               <span className="absolute bottom-2 left-0 w-full h-4 bg-primary/20 -rotate-1 rounded-full -z-0"></span>

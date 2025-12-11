@@ -1,9 +1,8 @@
 
 import Link from "next/link"
 import { Button } from "./ui/button"
-import { Palette, Menu, X } from "lucide-react"
+import { Palette } from "lucide-react"
 import { createClient } from "@/lib/supabase/server"
-import { useState } from "react"
 import { MobileMenu } from "./mobile-menu"
 
 export async function Header() {

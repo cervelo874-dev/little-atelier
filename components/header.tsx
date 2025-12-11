@@ -1,8 +1,10 @@
 
 import Link from "next/link"
 import { Button } from "./ui/button"
-import { Palette } from "lucide-react"
+import { Palette, Menu, X } from "lucide-react"
 import { createClient } from "@/lib/supabase/server"
+import { useState } from "react"
+import { MobileMenu } from "./mobile-menu"
 
 export async function Header() {
     const supabase = await createClient()
@@ -21,6 +23,7 @@ export async function Header() {
                 <div className="flex items-center gap-4">
                     {user ? (
                         <>
+                            {/* Desktop Nav */}
                             <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground mr-4">
                                 <Link href="/" className="hover:text-primary transition-colors">ギャラリー</Link>
                                 <Link href="/share" className="hover:text-primary transition-colors flex items-center gap-1">
@@ -29,7 +32,7 @@ export async function Header() {
                                 <Link href="/settings" className="hover:text-primary transition-colors">設定</Link>
                             </nav>
 
-                            <div className="flex items-center gap-2">
+                            <div className="hidden md:flex items-center gap-2">
                                 <Link href="/upload">
                                     <Button size="sm" className="gap-2">
                                         + 作品を追加
@@ -41,6 +44,9 @@ export async function Header() {
                                     </Button>
                                 </form>
                             </div>
+
+                            {/* Mobile Nav */}
+                            <MobileMenu />
                         </>
                     ) : (
                         <div className="flex items-center gap-2">

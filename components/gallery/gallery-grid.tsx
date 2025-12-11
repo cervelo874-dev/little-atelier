@@ -153,7 +153,7 @@ export function GalleryGrid() {
                 </div>
             )}
 
-            <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
                 {filteredArtworks.map((art) => (
                     <div key={art.id} className="break-inside-avoid relative group rounded-xl overflow-hidden bg-muted/20 border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
                         <div className="relative aspect-auto">

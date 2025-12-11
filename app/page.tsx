@@ -15,7 +15,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center text-center space-y-8">
+        <section className="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center text-center space-y-8 bg-blue-50/50 rounded-b-3xl">
           <div className="bg-primary/10 text-primary rounded-full px-6 py-2 text-sm font-bold tracking-wider">
             子供の作品専用 ポケット美術館
           </div>
@@ -57,7 +57,7 @@ export default function Home() {
         </section>
       </main>
       <footer className="py-6 text-center text-xs text-muted-foreground">
-        &copy; 2024 Little Atelier - v1.1
+        &copy; 2024 Little Atelier - v1.2 (DEBUG)
       </footer>
     </div>
   );

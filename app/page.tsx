@@ -23,7 +23,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-4xl md:text-7xl font-black tracking-widest text-foreground max-w-5xl leading-tight">
-            あふれる思い出を、<br className="md:hidden" />
+            <span className="inline-block">あふれる思い出を、</span><br className="md:hidden" />
             <span className="text-primary relative inline-block mx-2">
               <span className="relative z-10">ずっとキレイに。</span>
               <span className="absolute bottom-2 left-0 w-full h-4 bg-primary/20 -rotate-1 rounded-full -z-0"></span>
@@ -38,11 +38,6 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full justify-center max-w-md sm:max-w-none">
             <Link href="/upload" className="w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg font-bold rounded-full shadow-xl hover:translate-y-[-2px] transition-all gap-3">
-                ギャラリーを作る <ArrowRight className="h-5 w-5" />
-              </Button>
-            </Link>
-            <Link href="/upload" className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-lg font-bold rounded-full border-2 gap-3 hover:bg-muted/50">
                 <Upload className="h-5 w-5" /> 作品をアップロード
               </Button>
             </Link>
@@ -74,8 +69,8 @@ export default function Home() {
       </main>
 
       <footer className="py-8 text-center text-xs text-muted-foreground border-t">
-        <p>&copy; 2024 Little Atelier</p>
-        <p className="mt-1 opacity-50">Rev.20241211-Final</p>
+        <p>&copy; 2025 Little Atelier</p>
+        <p className="mt-1 opacity-50">Rev.20250101-v2</p>
       </footer>
     </div>
   );

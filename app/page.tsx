@@ -19,10 +19,10 @@ export default function Home() {
           <div className="bg-primary/10 text-primary rounded-full px-6 py-2 text-sm font-bold tracking-wider">
             子供の作品専用 ポケット美術館
           </div>
-          <h1 className="text-4xl md:text-6xl font-black tracking-widest text-foreground max-w-5xl leading-snug text-balance">
-            冷蔵庫に貼りきれない思い出を、<br className="md:hidden" />
+          <h1 className="text-3xl md:text-6xl font-black tracking-widest text-foreground max-w-5xl leading-snug text-balance">
+            あふれる思い出を、<br className="md:hidden" />
             <span className="text-primary relative inline-block whitespace-nowrap">
-              <span className="relative z-10">ずっとキレイに・コンパクトに</span>
+              <span className="relative z-10">ずっとキレイに。</span>
               <span className="absolute bottom-1 left-0 w-full h-3 bg-primary/20 -rotate-1 rounded-full -z-0"></span>
             </span>
           </h1>

@@ -30,10 +30,7 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl font-medium leading-relaxed">
-            Little Atelierは、どんどん増える子供の絵や工作を、スマホで撮影して整理するだけのシンプルなアプリです。
-            容量を気にせず、成長の記録を一生の宝物にしましょう。
-          </p>
+
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full justify-center max-w-md sm:max-w-none">
             <Link href="/upload" className="w-full sm:w-auto">
